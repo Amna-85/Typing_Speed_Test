@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Your stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Typing Speed Test</title>
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <a href="#" class="logo">
+        <img class="logo--small" src="./assets/images/logo-small.svg" alt="Typing Speed Test">
+        <img class="logo--large" src="./assets/images/logo-large.svg" alt="Typing Speed Test">
+      </a>
+      <p class="best">
+        <img src="./assets/images/icon-personal-best.svg" alt="">
+        <span class="best__label">Personal best:</span>
+        <span class="best__label best__label--short">Best:</span>
+        <strong id="best">0 WPM</strong>
+      </p>
+    </header>
+
+    <!-- Test screen -->
+    <main id="test">
+      <div class="bar">
+        <ul class="stats">
+          <li>WPM: <b id="wpm">0</b></li>
+          <li>Accuracy: <b id="acc" class="red">100%</b></li>
+          <li>Time: <b id="time" class="yellow">0:60</b></li>
+        </ul>
+
+        <div class="options">
+          <div class="group" role="group" aria-label="Difficulty">
+            <span class="group__label">Difficulty:</span>
+            <button type="button" data-diff="easy" aria-pressed="false">Easy</button>
+            <button type="button" data-diff="medium" aria-pressed="false">Medium</button>
+            <button type="button" data-diff="hard" aria-pressed="true">Hard</button>
+          </div>
+          <div class="group" role="group" aria-label="Mode">
+            <span class="group__label">Mode:</span>
+            <button type="button" data-mode="timed" aria-pressed="true">Timed (60s)</button>
+            <button type="button" data-mode="passage" aria-pressed="false">Passage</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="stage">
+        <div class="passage is-idle" id="passage" tabindex="0" aria-label="Typing passage"></div>
+        <div class="overlay" id="overlay">
+          <button type="button" class="btn btn--blue" id="start">Start Typing Test</button>
+          <p>Or click the text and start typing</p>
+        </div>
+      </section>
+
+      <div class="foot">
+        <button type="button" class="btn btn--dark" id="restart">
+          Restart Test <img src="./assets/images/icon-restart.svg" alt="">
+        </button>
+      </div>
+    </main>
+
+    <!-- Results screen -->
+    <section class="results" id="results" hidden>
+      <img class="star star--1" src="./assets/images/pattern-star-1.svg" alt="">
+      <img class="star star--2" src="./assets/images/pattern-star-2.svg" alt="">
+      <img class="results__icon" id="res-icon" src="./assets/images/icon-completed.svg" alt="">
+      <h1 id="res-title">Test Complete!</h1>
+      <p id="res-msg" class="muted"></p>
+
+      <div class="cards">
+        <div class="card"><span>WPM:</span><strong id="r-wpm">0</strong></div>
+        <div class="card"><span>Accuracy:</span><strong id="r-acc" class="red">0%</strong></div>
+        <div class="card">
+          <span>Characters</span>
+          <strong><i class="green" id="r-ok">0</i>/<i class="red" id="r-bad">0</i></strong>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn--white" id="again">
+        Go Again <img src="./assets/images/icon-restart.svg" alt="">
+      </button>
+    </section>
+
+  </div>
+
+  <!-- Your script -->
+  <script src="script.js"></script>
+</body>
+</html>
